@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Funkcjia zamienia liczby jeśli pierwsza z nich jest mniejsza od drugiej
 void wieksza(int *w1, int *w2)
 {
     int pom;
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
     cin >> a;
     cout << "Podaj druga liczbe:" << endl;
     cin >> b;
-
+    //Przypisanie wskaźniką wartości naszych liczb
     w1 = &a;
     w2 = &b;
 
