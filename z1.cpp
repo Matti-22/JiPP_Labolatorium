@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
     cin >> a;
     cout << "Podaj druga liczbe:" << endl;
     cin >> b;
-    
+
+    *w1 = a;
+    *w2 = b;    
 
 }
