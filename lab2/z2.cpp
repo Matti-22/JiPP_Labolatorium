@@ -20,5 +20,5 @@ int main()
 
     cout << "Liczby przed zamieniniem a = " << a << " b = " << b << endl;
     zamiana(a, b);
-    cout << "Liczby po zamieniniem a = " << a << " b = " << b << endl;
+    cout << "Liczby po zamieniniu a = " << a << " b = " << b << endl;
 }
