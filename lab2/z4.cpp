@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Funkcja zwraca dwie wartości, iloczyn oraz przy użyciu referencji sumę dwóch liczb 
 int fun(int zmA, int zmB, int &suma)
 {
     int iloczyn = zmA * zmB;
