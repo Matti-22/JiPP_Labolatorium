@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Funkcja zamienia ze sobą liczby dostając jako argumenty referencje a i wskaźnik do b
 void zamiana(int &ra, int *wb)
 {
     int pom = ra;
