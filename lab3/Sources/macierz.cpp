@@ -7,7 +7,7 @@ Macierz::Macierz(int w, int k)
     //Podstawowa obsługa błędów
     if (w <= 0 || k <= 0)
     {
-        cout << "Macierz nie moze miec ujemnej ilosci wierszy lub kolumn!!!";
+        cout << "Macierz nie moze miec ujemnej lub zerowej ilosci wierszy lub kolumn!!!";
         exit(1);
     }
     wiersze = w;
@@ -33,7 +33,7 @@ Macierz::Macierz(int r)
     //Podstawowa obsługa błędów
     if (r <= 0)
     {
-        cout << "Macierz nie moze miec ujemnej ilosci wierszy lub kolumn!!!";
+        cout << "Macierz nie moze miec ujemnej lub zerowej ilosci wierszy lub kolumn!!!";
         exit(1);
     }
     wiersze = r;
@@ -63,6 +63,29 @@ Macierz::~Macierz()
     }
     delete[] tablica;
     tablica = NULL;
+}
+
+void Macierz::set(int n, int m, double val)
+{
+    //Podstawowa obsługa błędów 
+    if (n < 0 || m < 0 || n > wiersze || m > kolumny)
+    {
+        cout << "Podane miejsce nie nalezy do mancierzy!!"<<endl;
+    }
+    else
+    {
+         tablica[n][m] = val;
+    }
+}
+
+double Macierz::get(int n,int m)
+{
+    //Podstawowa obsługa błędów 
+    if (n < 0 || m < 0 || n > wiersze || m > kolumny)
+    {
+        cout << "Podane miejsce nie nalezy do mancierzy!!"<<endl;
+    }
+    return tablica[n][m];
 }
 
 void Macierz::print()
