@@ -85,7 +85,10 @@ double Macierz::get(int n,int m)
     {
         cout << "Podane miejsce nie nalezy do mancierzy!!"<<endl;
     }
-    return tablica[n][m];
+    else
+    {
+        return tablica[n][m];
+    }
 }
 
 void Macierz::print()
