@@ -67,23 +67,23 @@ Macierz::~Macierz()
 
 void Macierz::set(int n, int m, double val)
 {
-    //Podstawowa obsługa błędów 
+    //Podstawowa obsługa błędów
     if (n < 0 || m < 0 || n > wiersze || m > kolumny)
     {
-        cout << "Podane miejsce nie nalezy do mancierzy!!"<<endl;
+        cout << "Podane miejsce nie nalezy do mancierzy!!" << endl;
     }
     else
     {
-         tablica[n][m] = val;
+        tablica[n][m] = val;
     }
 }
 
-double Macierz::get(int n,int m)
+double Macierz::get(int n, int m)
 {
-    //Podstawowa obsługa błędów 
+    //Podstawowa obsługa błędów
     if (n < 0 || m < 0 || n > wiersze || m > kolumny)
     {
-        cout << "Podane miejsce nie nalezy do mancierzy!!"<<endl;
+        cout << "Podane miejsce nie nalezy do mancierzy!! Dla metody get(" << n << " " << m << ")" << endl;
         exit(2);
     }
     else

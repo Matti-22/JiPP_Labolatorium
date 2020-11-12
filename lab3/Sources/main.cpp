@@ -17,12 +17,13 @@ int main()
         }
     }
     */
-   
+
     /*
     m1.set(1, 2, 13);
-    double pom = m1.get(1, 2);
+    double pom = m1.get(-1, 2);
     cout << "pom = " << pom << endl;
     */
+    
     m1.print();
     return 0;
 }
