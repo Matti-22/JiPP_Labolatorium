@@ -8,10 +8,13 @@ class Macierz
     double **tablica;
 
 public:
-    Macierz(int = 1, int = 1);
+    //Konstruktor służący do tworzenia macierzy o x wierszach i y kolumnach
+    Macierz(int w, int k);
+    //Konstruktor służący do tworzenia macierzy kwadratowej
+    Macierz(int r);
+    //Destruktor
     ~Macierz();
 
-
-//Funkcia ma za zadanie wyświetlić macierz na ekranie 
+    //Funkcia ma za zadanie wyświetlić macierz na ekranie
     void print();
 };
