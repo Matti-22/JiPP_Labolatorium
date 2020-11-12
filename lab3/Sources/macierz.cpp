@@ -84,7 +84,7 @@ double Macierz::get(int n,int m)
     if (n < 0 || m < 0 || n > wiersze || m > kolumny)
     {
         cout << "Podane miejsce nie nalezy do mancierzy!!"<<endl;
-        return 0;
+        exit(2);
     }
     else
     {
