@@ -92,6 +92,27 @@ double Macierz::get(int n, int m)
     }
 }
 
+Macierz Macierz::add(Macierz m2)
+{
+    if(m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
+    {
+        cout<<"By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!"<<endl;
+        return 0;
+    }
+    Macierz m3(this->wiersze,this->kolumny);
+
+    for(int i=0;i<wiersze;i++)
+    {
+        for(int j=0;j<kolumny;j++)
+        {
+            m3.tablica[i][j] = this->tablica[i][j] + m2.tablica[i][j]; 
+        }
+    }
+
+    return m3;
+}
+
+
 void Macierz::print()
 {
     for (int i = 0; i < wiersze; i++)

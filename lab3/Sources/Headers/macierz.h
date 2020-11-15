@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 class Macierz
@@ -20,7 +19,7 @@ public:
     //Metoda pobierająca element (n,m)
     double get(int n, int m);
     //Metoda przyjmująca jako argument inną macierz zwraca jako wynik nową macierz będącą sumą bieżacej macierzy oraz macierzy przekazanej jako argument
-    
+    Macierz add(Macierz m2);
     //Metoda ma za zadanie wyświetlić macierz na ekranie
     void print();
 };
