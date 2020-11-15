@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Headers\macierz.h"
 using namespace std;
 
@@ -94,11 +95,13 @@ double Macierz::get(int n, int m)
 
 Macierz Macierz::add(Macierz m2)
 {
+    //Podstawowa obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
     {
         cout << "By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!" << endl;
         return 0;
     }
+
     Macierz m3(this->wiersze, this->kolumny);
 
     for (int i = 0; i < wiersze; i++)
@@ -114,11 +117,13 @@ Macierz Macierz::add(Macierz m2)
 
 Macierz Macierz::subtract(Macierz m2)
 {
+    //Podstawowa obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
     {
         cout << "By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!" << endl;
         return 0;
     }
+
     Macierz m3(this->wiersze, this->kolumny);
 
     for (int i = 0; i < wiersze; i++)
@@ -134,6 +139,7 @@ Macierz Macierz::subtract(Macierz m2)
 
 Macierz Macierz::multiply(Macierz m2)
 {
+    //Podstawowa obsługa błędów
     if (this->kolumny != m2.wiersze)
     {
         cout << "Liczba kolumn macierzy A musi byc rowna liczbie wierszy macierzy B!!!" << endl;
@@ -178,4 +184,13 @@ void Macierz::print()
         }
         cout << endl;
     }
+}
+
+void store(string filename, string path)
+{
+    
+
+    fstream plik;
+    plik.open(path,ios::out);
+    if (plik);
 }

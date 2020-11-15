@@ -38,6 +38,6 @@ public:
     //Metoda ma za zadanie wyświetlić macierz na ekranie
     void print();
 
-    //
+    //Metoda zapisująca macierz w pliku, w pierwszym wierszu pliku jej wymiary (liczbę kolumn i wierszy) oraz jej zawartość (każdy wiersz macierzy w osobnym wierszu pliku)
     void store(string filename, string path);
 };
