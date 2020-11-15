@@ -94,24 +94,69 @@ double Macierz::get(int n, int m)
 
 Macierz Macierz::add(Macierz m2)
 {
-    if(m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
+    if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
     {
-        cout<<"By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!"<<endl;
+        cout << "By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!" << endl;
         return 0;
     }
-    Macierz m3(this->wiersze,this->kolumny);
+    Macierz m3(this->wiersze, this->kolumny);
 
-    for(int i=0;i<wiersze;i++)
+    for (int i = 0; i < wiersze; i++)
     {
-        for(int j=0;j<kolumny;j++)
+        for (int j = 0; j < kolumny; j++)
         {
-            m3.tablica[i][j] = this->tablica[i][j] + m2.tablica[i][j]; 
+            m3.tablica[i][j] = this->tablica[i][j] + m2.tablica[i][j];
         }
     }
 
     return m3;
 }
 
+Macierz Macierz::subtract(Macierz m2)
+{
+    if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
+    {
+        cout << "By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!" << endl;
+        return 0;
+    }
+    Macierz m3(this->wiersze, this->kolumny);
+
+    for (int i = 0; i < wiersze; i++)
+    {
+        for (int j = 0; j < kolumny; j++)
+        {
+            m3.tablica[i][j] = this->tablica[i][j] - m2.tablica[i][j];
+        }
+    }
+
+    return m3;
+}
+
+Macierz Macierz::multiply(Macierz m2)
+{
+    if (this->kolumny != m2.wiersze)
+    {
+        cout << "Liczba kolumn macierzy A musi byc rowna liczbie wierszy macierzy B!!!" << endl;
+        return 0;
+    }
+
+    Macierz m3(this->wiersze, m2.kolumny);
+    double suma;
+    
+    for (int i = 0; i < this->wiersze; i++)
+    {
+        for (int j = 0; j < m2.kolumny; j++)
+        {
+            suma = 0;
+            for (int k = 0; k < m2.wiersze; k++)
+            {
+                suma += this->tablica[i][k] * m2.tablica[k][j];
+            }
+            m3.tablica[i][j] = suma;
+        }
+    }
+    return m3;
+}
 
 void Macierz::print()
 {
