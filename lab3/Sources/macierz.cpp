@@ -142,7 +142,7 @@ Macierz Macierz::multiply(Macierz m2)
 
     Macierz m3(this->wiersze, m2.kolumny);
     double suma;
-    
+
     for (int i = 0; i < this->wiersze; i++)
     {
         for (int j = 0; j < m2.kolumny; j++)
@@ -156,6 +156,16 @@ Macierz Macierz::multiply(Macierz m2)
         }
     }
     return m3;
+}
+
+int Macierz::cols()
+{
+    return this->kolumny;
+}
+
+int Macierz::rows()
+{
+    return this->wiersze;
 }
 
 void Macierz::print()

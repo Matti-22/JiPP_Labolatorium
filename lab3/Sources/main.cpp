@@ -30,6 +30,9 @@ int main()
 
     Macierz m3 = m1.multiply(m2);
 
+    int k = m1.cols();
+    cout << endl
+         << "liczba kolumn: " << k << endl;
     /*
     m1.set(1, 2, 13);
     double pom = m1.get(-1, 2);

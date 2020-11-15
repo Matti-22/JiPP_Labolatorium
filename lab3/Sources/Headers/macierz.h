@@ -3,10 +3,10 @@ using namespace std;
 
 class Macierz
 {
-public:
     int wiersze, kolumny;
     double **tablica;
 
+public:
     //Konstruktor służący do tworzenia macierzy o x wierszach i y kolumnach
     Macierz(int w, int k);
     //Konstruktor służący do tworzenia macierzy kwadratowej
@@ -29,6 +29,15 @@ public:
     //Metoda przyjmująca jako argument inną macierz i zwracająca jako wynik nową macierz będącą iloczynem bieżącej macierzy oraz macierzy przekazanej jako argument
     Macierz multiply(Macierz m2);
 
+    //Metoda zwracająca liczbę kolumn macierzy
+    int cols();
+
+    //Metoda zwracająca liczbę wierszy macierzy
+    int rows();
+
     //Metoda ma za zadanie wyświetlić macierz na ekranie
     void print();
+
+    //
+    void store(string filename, string path);
 };
