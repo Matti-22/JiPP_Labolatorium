@@ -180,10 +180,11 @@ void Macierz::print()
     {
         for (int j = 0; j < kolumny; j++)
         {
-            cout << tablica[i][j] << " ";
+            cout << tablica[i][j] << "  ";
         }
         cout << endl;
     }
+    cout << endl;
 }
 
 void Macierz::store(string filename, string path)
@@ -200,7 +201,7 @@ void Macierz::store(string filename, string path)
         {
             for (int j = 0; j < kolumny; j++)
             {
-                plik << tablica[i][j] << " ";
+                plik << tablica[i][j] << "  ";
             }
             plik << endl;
         }

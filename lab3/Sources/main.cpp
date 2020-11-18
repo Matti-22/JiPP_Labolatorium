@@ -2,54 +2,63 @@
 #include "Headers\macierz.h"
 using namespace std;
 
-int main()
+void test()
 {
-    /*
-    Macierz m1("D:/Mateusz/Programowanie/C++/JiPP_lab/lab3/Sources/test.txt");
-    m1.print();
-    */
-    //Tworzenie nowych macierzy i pobarnie liczby ich kolumn i wierszy
-    Macierz m1(3);
-    int k1 = m1.cols();
-    int w1 = m1.rows();
-    Macierz m2(3);
-    int k2 = m2.cols();
-    int w2 = m2.rows();
-    
-    double pom;
+    Macierz m1(4, 5);
+    int kol = m1.cols();
+    int wier = m1.rows();
 
-    cout << "Prosze podac wartosci pierwszej macierzy:" << endl;
-    for (int i = 0; i < w1; i++)
+    double pom = -15;
+    //Zapełniamy macierz wartościami
+    for (int i = 0; i < wier; i++)
     {
-        for (int j = 0; j < k1; j++)
+        for (int j = 0; j < kol; j++)
         {
-            cin >> pom;
             m1.set(i, j, pom);
+            pom += 0.5;
         }
     }
 
-    cout << "Prosze podac wartosci drugiej macierzy:" << endl;
-    for (int i = 0; i < w2; i++)
+    cout << "Macierz m1:" << endl;
+    m1.print();
+
+    Macierz m2(5);
+    kol = m2.cols();
+    wier = m2.rows();
+    //Zapełniamy macierz wartościami
+    for (int i = 0; i < wier; i++)
     {
-        for (int j = 0; j < k2; j++)
+        for (int j = 0; j < kol; j++)
         {
-            cin >> pom;
             m2.set(i, j, pom);
+            pom += 0.5;
         }
     }
+
+    cout << "Macierz m2:" << endl;
+    m2.print();
 
     Macierz m3 = m1.multiply(m2);
-
-    m3.store("test.txt","D:/Mateusz/Programowanie/C++/JiPP_lab/lab3/Sources");
-/*
-    cout << endl
-         << "liczba wierszy m1: " << w1 << endl;
-    
-    m1.set(1, 2, 13);
-    double pom = m1.get(-1, 2);
-    cout << "pom = " << pom << endl;
-    */
-
+    cout << "Macierz m1 * m2 = m3:" << endl;
     m3.print();
+
+    Macierz m4 =m3.add(m1);
+    cout << "Macierz m3 + m1 = m4:" << endl;
+    m4.print();
+
+    Macierz m5 = m3.subtract(m1);
+    cout << "Macierz m3 - m1 = m5:" << endl;
+    m5.print();
+
+    m5.store("m5.txt","pliki");
+
+    Macierz m6("pliki/m5.txt");
+    cout << "Macierz m6 wczytana z pliku m5.txt:" << endl;
+    m6.print();
+}
+
+int main()
+{
+    test();
     return 0;
 }
