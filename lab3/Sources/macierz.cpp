@@ -186,11 +186,62 @@ void Macierz::print()
     }
 }
 
-void store(string filename, string path)
+void Macierz::store(string filename, string path)
 {
-    
 
+    string full_path = path + '/' + filename;
     fstream plik;
-    plik.open(path,ios::out);
-    if (plik);
+
+    plik.open(full_path, ios::out);
+    if (plik.is_open())
+    {
+        plik << wiersze << " " << kolumny << endl;
+        for (int i = 0; i < wiersze; i++)
+        {
+            for (int j = 0; j < kolumny; j++)
+            {
+                plik << tablica[i][j] << " ";
+            }
+            plik << endl;
+        }
+        plik.close();
+    }
+    else
+    {
+        cout << "Blad otwarcia pliku!" << endl;
+        cout << "Sprawdz czy podana sciezka: " << full_path << " jest poprawna" << endl;
+    }
 }
+
+Macierz::Macierz(string path)
+{
+    fstream plik;
+    plik.open(path);
+    if (plik.is_open())
+    {
+        plik >> this->wiersze;
+        plik >> this->kolumny;
+
+        //Alokacja pamięci dla nowej macierzy
+        tablica = new double *[wiersze];
+        for (int i = 0; i < wiersze; i++)
+        {
+            tablica[i] = new double[kolumny];
+        }
+
+        for (int i = 0; i < wiersze; i++)
+        {
+            for (int j = 0; j < kolumny; j++)
+            {
+                plik >> tablica[i][j];
+            }
+        }
+        plik.close();
+    }
+    else
+    {
+        cout << "Blad otwarcia pliku!" << endl;
+        cout << "Sprawdz czy podana sciezka: " << path << " jest poprawna" << endl;
+        exit(3);
+    }
+}  

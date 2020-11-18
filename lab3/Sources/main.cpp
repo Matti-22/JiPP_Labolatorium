@@ -4,6 +4,10 @@ using namespace std;
 
 int main()
 {
+    /*
+    Macierz m1("D:/Mateusz/Programowanie/C++/JiPP_lab/lab3/Sources/test.txt");
+    m1.print();
+    */
     //Tworzenie nowych macierzy i pobarnie liczby ich kolumn i wierszy
     Macierz m1(3);
     int k1 = m1.cols();
@@ -11,7 +15,7 @@ int main()
     Macierz m2(3);
     int k2 = m2.cols();
     int w2 = m2.rows();
-
+    
     double pom;
 
     cout << "Prosze podac wartosci pierwszej macierzy:" << endl;
@@ -36,9 +40,11 @@ int main()
 
     Macierz m3 = m1.multiply(m2);
 
+    m3.store("test.txt","D:/Mateusz/Programowanie/C++/JiPP_lab/lab3/Sources");
+/*
     cout << endl
          << "liczba wierszy m1: " << w1 << endl;
-    /*
+    
     m1.set(1, 2, 13);
     double pom = m1.get(-1, 2);
     cout << "pom = " << pom << endl;

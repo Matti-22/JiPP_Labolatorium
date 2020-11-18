@@ -11,6 +11,8 @@ public:
     Macierz(int w, int k);
     //Konstruktor służący do tworzenia macierzy kwadratowej
     Macierz(int r);
+    //Konstruktor czytający dane na temat macierzy z pliku, przyjmujący jako argument ścieżkę do tego pliku
+    Macierz(string path);
     //Destruktor
     ~Macierz();
 
@@ -40,4 +42,5 @@ public:
 
     //Metoda zapisująca macierz w pliku, w pierwszym wierszu pliku jej wymiary (liczbę kolumn i wierszy) oraz jej zawartość (każdy wiersz macierzy w osobnym wierszu pliku)
     void store(string filename, string path);
+    
 };
