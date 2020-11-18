@@ -2,6 +2,7 @@
 #include "Headers\macierz.h"
 using namespace std;
 
+//Funkcjia sprawdza działanie wszystkich metod i konstruktorów
 void test()
 {
     Macierz m1(4, 5);
