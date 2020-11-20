@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.cpp
+iostream
+-
+fstream
+-
+macierz.h
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.h
+
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.h
+iostream
+-
+
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/main.cpp
+iostream
+-
+macierz.h
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.h
+
