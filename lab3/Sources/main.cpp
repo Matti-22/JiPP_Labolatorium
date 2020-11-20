@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Headers\macierz.h"
+#include "Headers/macierz.h"
 using namespace std;
 
 //Funkcjia sprawdza działanie wszystkich metod i konstruktorów
