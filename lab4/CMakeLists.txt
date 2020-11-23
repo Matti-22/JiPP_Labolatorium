@@ -8,9 +8,9 @@ project( lab4 )
 # files
 
 # include
-include_directories( ./src )
+include_directories( ./include/lab4 )
 
 # target
-add_executable( binary ./src/main.cpp ./src/macierz.cpp )
+add_executable( lab4 ./src/main.cpp ./src/macierz.cpp )
 
 # external libs

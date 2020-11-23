@@ -1,12 +1,12 @@
 [
 {
   "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/build",
-  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/binary.dir/includes_CXX.rsp -g -o CMakeFiles/binary.dir/src/main.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/main.cpp",
+  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab4.dir/includes_CXX.rsp -g -o CMakeFiles/lab4.dir/src/main.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/main.cpp",
   "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/main.cpp"
 },
 {
   "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/build",
-  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/binary.dir/includes_CXX.rsp -g -o CMakeFiles/binary.dir/src/macierz.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.cpp",
+  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab4.dir/includes_CXX.rsp -g -o CMakeFiles/lab4.dir/src/macierz.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.cpp",
   "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.cpp"
 }
 ]

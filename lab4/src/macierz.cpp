@@ -57,13 +57,7 @@ Macierz::Macierz(int r)
 
 Macierz::~Macierz()
 {
-    //Zwolnienie pamięci zarezerwowaniej przez macierz
-    for (int i = 0; i < wiersze; i++)
-    {
-        delete[] tablica[i];
-    }
-    delete[] tablica;
-    tablica = NULL;
+
 }
 
 void Macierz::set(int n, int m, double val)

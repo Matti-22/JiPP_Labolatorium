@@ -5,7 +5,7 @@ using namespace std;
 //Funkcjia sprawdza działanie wszystkich metod i konstruktorów
 void test()
 {
-    Macierz m1(4, 5);
+    Macierz m1(4,5);
     int kol = m1.cols();
     int wier = m1.rows();
 
@@ -35,7 +35,6 @@ void test()
             pom += 0.5;
         }
     }
-
     cout << "Macierz m2:" << endl;
     m2.print();
 
@@ -51,9 +50,9 @@ void test()
     cout << "Macierz m3 - m1 = m5:" << endl;
     m5.print();
 
-    m5.store("m5.txt","pliki");
+    m5.store("m5.txt","../src/pliki");
 
-    Macierz m6("pliki/m5.txt");
+    Macierz m6("../src/pliki/m5.txt");
     cout << "Macierz m6 wczytana z pliku m5.txt:" << endl;
     m6.print();
 }

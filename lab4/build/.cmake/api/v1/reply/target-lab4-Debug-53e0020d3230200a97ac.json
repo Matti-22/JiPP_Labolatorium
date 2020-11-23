@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "binary.exe"
+			"path" : "lab4.exe"
 		},
 		{
-			"path" : "binary.pdb"
+			"path" : "lab4.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/./src"
+					"path" : "D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/./include/lab4"
 				}
 			],
 			"language" : "CXX",
@@ -63,7 +63,7 @@
 			]
 		}
 	],
-	"id" : "binary::@6890427a1f51a3e7e1df",
+	"id" : "lab4::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -83,8 +83,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "binary",
-	"nameOnDisk" : "binary.exe",
+	"name" : "lab4",
+	"nameOnDisk" : "lab4.exe",
 	"paths" : 
 	{
 		"build" : ".",

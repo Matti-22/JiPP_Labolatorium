@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Mateusz/Programowanie/C++/JiPP_lab/lab4/src/macierz.h
+../include/lab4/macierz.h
 iostream
 -
 

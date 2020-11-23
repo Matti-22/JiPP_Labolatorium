@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named binary
+# Target rules for targets named lab4
 
 # Build rule for target.
-binary: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 binary
-.PHONY : binary
+lab4: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab4
+.PHONY : lab4
 
 # fast build rule for target.
-binary/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/build
-.PHONY : binary/fast
+lab4/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/build
+.PHONY : lab4/fast
 
 src/macierz.obj: src/macierz.cpp.obj
 
@@ -148,7 +148,7 @@ src/macierz.obj: src/macierz.cpp.obj
 
 # target to build an object file
 src/macierz.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/src/macierz.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/src/macierz.cpp.obj
 .PHONY : src/macierz.cpp.obj
 
 src/macierz.i: src/macierz.cpp.i
@@ -157,7 +157,7 @@ src/macierz.i: src/macierz.cpp.i
 
 # target to preprocess a source file
 src/macierz.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/src/macierz.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/src/macierz.cpp.i
 .PHONY : src/macierz.cpp.i
 
 src/macierz.s: src/macierz.cpp.s
@@ -166,7 +166,7 @@ src/macierz.s: src/macierz.cpp.s
 
 # target to generate assembly for a file
 src/macierz.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/src/macierz.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/src/macierz.cpp.s
 .PHONY : src/macierz.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -175,7 +175,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -184,7 +184,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -193,7 +193,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/binary.dir/build.make CMakeFiles/binary.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab4.dir/build.make CMakeFiles/lab4.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -204,7 +204,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... binary"
+	@echo "... lab4"
 	@echo "... src/macierz.obj"
 	@echo "... src/macierz.i"
 	@echo "... src/macierz.s"
