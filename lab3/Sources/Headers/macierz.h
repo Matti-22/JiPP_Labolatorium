@@ -23,13 +23,13 @@ public:
     double get(int n, int m);
 
     //Metoda przyjmująca jako argument inną macierz zwraca jako wynik nową macierz będącą sumą bieżacej macierzy oraz macierzy przekazanej jako argument
-    Macierz add(Macierz m2);
+    Macierz add(Macierz& m2);
 
     //Metoda przyjmująca jako argument inną macierz i zwracająca jako wynik nową macierz będącą różnicą bieżącej macierzy oraz macierzy przekazanej jako argument
-    Macierz subtract(Macierz m2);
+    Macierz subtract(Macierz& m2);
 
     //Metoda przyjmująca jako argument inną macierz i zwracająca jako wynik nową macierz będącą iloczynem bieżącej macierzy oraz macierzy przekazanej jako argument
-    Macierz multiply(Macierz m2);
+    Macierz multiply(Macierz& m2);
 
     //Metoda zwracająca liczbę kolumn macierzy
     int cols();

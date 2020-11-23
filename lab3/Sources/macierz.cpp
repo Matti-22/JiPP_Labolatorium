@@ -57,13 +57,7 @@ Macierz::Macierz(int r)
 
 Macierz::~Macierz()
 {
-    //Zwolnienie pamięci zarezerwowaniej przez macierz
-    for (int i = 0; i < wiersze; i++)
-    {
-        delete[] tablica[i];
-    }
-    delete[] tablica;
-    tablica = NULL;
+    
 }
 
 void Macierz::set(int n, int m, double val)
@@ -93,7 +87,7 @@ double Macierz::get(int n, int m)
     }
 }
 
-Macierz Macierz::add(Macierz m2)
+Macierz Macierz::add(Macierz& m2)
 {
     //Podstawowa obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
@@ -115,7 +109,7 @@ Macierz Macierz::add(Macierz m2)
     return m3;
 }
 
-Macierz Macierz::subtract(Macierz m2)
+Macierz Macierz::subtract(Macierz& m2)
 {
     //Podstawowa obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
@@ -137,7 +131,7 @@ Macierz Macierz::subtract(Macierz m2)
     return m3;
 }
 
-Macierz Macierz::multiply(Macierz m2)
+Macierz Macierz::multiply(Macierz& m2)
 {
     //Podstawowa obsługa błędów
     if (this->kolumny != m2.wiersze)
