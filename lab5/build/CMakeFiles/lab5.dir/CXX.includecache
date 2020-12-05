@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lab5/macierz.h
+iostream
+-
+
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/main.cpp
+iostream
+-
+macierz.h
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/macierz.h
+
