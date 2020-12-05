@@ -104,20 +104,36 @@ CMakeFiles/lab5.dir/src/macierz.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab5.dir/src/macierz.cpp.s"
 	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/macierz.cpp -o CMakeFiles/lab5.dir/src/macierz.cpp.s
 
+CMakeFiles/lab5.dir/test/test.cpp.obj: CMakeFiles/lab5.dir/flags.make
+CMakeFiles/lab5.dir/test/test.cpp.obj: CMakeFiles/lab5.dir/includes_CXX.rsp
+CMakeFiles/lab5.dir/test/test.cpp.obj: ../test/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab5.dir/test/test.cpp.obj"
+	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab5.dir/test/test.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/test/test.cpp
+
+CMakeFiles/lab5.dir/test/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab5.dir/test/test.cpp.i"
+	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/test/test.cpp > CMakeFiles/lab5.dir/test/test.cpp.i
+
+CMakeFiles/lab5.dir/test/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab5.dir/test/test.cpp.s"
+	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/test/test.cpp -o CMakeFiles/lab5.dir/test/test.cpp.s
+
 # Object files for target lab5
 lab5_OBJECTS = \
 "CMakeFiles/lab5.dir/src/main.cpp.obj" \
-"CMakeFiles/lab5.dir/src/macierz.cpp.obj"
+"CMakeFiles/lab5.dir/src/macierz.cpp.obj" \
+"CMakeFiles/lab5.dir/test/test.cpp.obj"
 
 # External object files for target lab5
 lab5_EXTERNAL_OBJECTS =
 
 lab5.exe: CMakeFiles/lab5.dir/src/main.cpp.obj
 lab5.exe: CMakeFiles/lab5.dir/src/macierz.cpp.obj
+lab5.exe: CMakeFiles/lab5.dir/test/test.cpp.obj
 lab5.exe: CMakeFiles/lab5.dir/build.make
 lab5.exe: CMakeFiles/lab5.dir/linklibs.rsp
 lab5.exe: CMakeFiles/lab5.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab5.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lab5.exe"
 	"C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/lab5.dir/objects.a
 	D:/Mateusz/Programy/mimgw/MinGW/bin/ar.exe cr CMakeFiles/lab5.dir/objects.a @CMakeFiles/lab5.dir/objects1.rsp
 	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe -g -Wl,--whole-archive CMakeFiles/lab5.dir/objects.a -Wl,--no-whole-archive -o lab5.exe -Wl,--out-implib,liblab5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/lab5.dir/linklibs.rsp

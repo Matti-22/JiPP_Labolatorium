@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lab5.dir/src/macierz.cpp.obj"
   "CMakeFiles/lab5.dir/src/main.cpp.obj"
+  "CMakeFiles/lab5.dir/test/test.cpp.obj"
   "lab5.exe"
   "lab5.exe.manifest"
   "lab5.pdb"

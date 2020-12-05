@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/macierz.cpp" "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build/CMakeFiles/lab5.dir/src/macierz.cpp.obj"
   "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/main.cpp" "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build/CMakeFiles/lab5.dir/src/main.cpp.obj"
+  "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/test/test.cpp" "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build/CMakeFiles/lab5.dir/test/test.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

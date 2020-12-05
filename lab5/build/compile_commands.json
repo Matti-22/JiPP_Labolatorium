@@ -8,5 +8,10 @@
   "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build",
   "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab5.dir/includes_CXX.rsp -g -o CMakeFiles/lab5.dir/src/macierz.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/macierz.cpp",
   "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/src/macierz.cpp"
+},
+{
+  "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/build",
+  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab5.dir/includes_CXX.rsp -g -o CMakeFiles/lab5.dir/test/test.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/test/test.cpp",
+  "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab5/test/test.cpp"
 }
 ]

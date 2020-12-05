@@ -7,3 +7,6 @@ CMakeFiles/lab5.dir/src/macierz.cpp.obj: ../src/macierz.cpp
 CMakeFiles/lab5.dir/src/main.cpp.obj: ../include/lab5/macierz.h
 CMakeFiles/lab5.dir/src/main.cpp.obj: ../src/main.cpp
 
+CMakeFiles/lab5.dir/test/test.cpp.obj: ../include/lab5/macierz.h
+CMakeFiles/lab5.dir/test/test.cpp.obj: ../test/test.cpp
+

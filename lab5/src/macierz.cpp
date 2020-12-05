@@ -1,15 +1,25 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "macierz.h"
 using namespace std;
 
 Macierz::Macierz(int w, int k)
 {
-    //Podstawowa obsługa błędów
-    if (w <= 0 || k <= 0)
+    //Obsługa błędów
+    if (w <= 0)
     {
-        cout << "Macierz nie moze miec ujemnej lub zerowej ilosci wierszy lub kolumn!!!";
-        exit(1);
+        stringstream errorMsg;
+        errorMsg << "Macierz nie moze miec ujemnej lub zerowej ilosci wierszy" << endl;
+        errorMsg << "w: " << w << endl;
+        throw invalid_argument(errorMsg.str());
+    }
+    if (k <= 0)
+    {
+        stringstream errorMsg;
+        errorMsg << "Macierz nie moze miec ujemnej lub zerowej ilosci kolumn" << endl;
+        errorMsg << "k: " << k << endl;
+        throw invalid_argument(errorMsg.str());
     }
     wiersze = w;
     kolumny = k;
@@ -31,11 +41,13 @@ Macierz::Macierz(int w, int k)
 
 Macierz::Macierz(int r)
 {
-    //Podstawowa obsługa błędów
+    //Obsługa błędów
     if (r <= 0)
     {
-        cout << "Macierz nie moze miec ujemnej lub zerowej ilosci wierszy lub kolumn!!!";
-        exit(1);
+        stringstream errorMsg;
+        errorMsg << "Macierz nie moze miec ujemnej lub zerowej ilosci wierszy lub kolumn" << endl;
+        errorMsg << "r: " << r << endl;
+        throw invalid_argument(errorMsg.str());
     }
     wiersze = r;
     kolumny = r;
@@ -62,10 +74,13 @@ Macierz::~Macierz()
 
 void Macierz::set(int n, int m, double val)
 {
-    //Podstawowa obsługa błędów
+    //Obsługa błędów
     if (n < 0 || m < 0 || n > wiersze || m > kolumny)
     {
-        cout << "Podane miejsce nie nalezy do mancierzy!!" << endl;
+        stringstream errorMsg;
+        errorMsg << "Podany adres jest poza obszarem macierzy [" << this->wiersze << "," << this->kolumny << "]" << endl;
+        errorMsg << "Punkt (" << n << "," << m << ")" << endl;
+        throw invalid_argument(errorMsg.str());
     }
     else
     {
@@ -75,11 +90,13 @@ void Macierz::set(int n, int m, double val)
 
 double Macierz::get(int n, int m)
 {
-    //Podstawowa obsługa błędów
+    //Obsługa błędów
     if (n < 0 || m < 0 || n > wiersze || m > kolumny)
     {
-        cout << "Podane miejsce nie nalezy do mancierzy!! Dla metody get(" << n << " " << m << ")" << endl;
-        exit(2);
+        stringstream errorMsg;
+        errorMsg << "Podany adres jest poza obszarem macierzy [" << this->wiersze << "," << this->kolumny << "]" << endl;
+        errorMsg << "Punkt (" << n << "," << m << ")" << endl;
+        throw invalid_argument(errorMsg.str());
     }
     else
     {
@@ -89,11 +106,13 @@ double Macierz::get(int n, int m)
 
 Macierz Macierz::add(Macierz m2)
 {
-    //Podstawowa obsługa błędów
+    //Obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
     {
-        cout << "By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!" << endl;
-        return 0;
+        stringstream errorMsg;
+        errorMsg << "Nie da sie dodac macierzy o roznych rozmiarach" << endl;
+        errorMsg << "[" << m2.wiersze << "," << m2.kolumny << "] != [" << this->wiersze << "," << this->kolumny << "]" << endl;
+        throw invalid_argument(errorMsg.str());
     }
 
     Macierz m3(this->wiersze, this->kolumny);
@@ -111,11 +130,13 @@ Macierz Macierz::add(Macierz m2)
 
 Macierz Macierz::subtract(Macierz m2)
 {
-    //Podstawowa obsługa błędów
+    //Obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
     {
-        cout << "By dodac dwie macierze musza miec one tyle samo wierszy jak i kolumn!!!" << endl;
-        return 0;
+        stringstream errorMsg;
+        errorMsg << "Nie da sie odjac macierzy o roznych rozmiarach" << endl;
+        errorMsg << "[" << m2.wiersze << "," << m2.kolumny << "] != [" << this->wiersze << "," << this->kolumny << "]" << endl;
+        throw invalid_argument(errorMsg.str());
     }
 
     Macierz m3(this->wiersze, this->kolumny);
@@ -133,11 +154,13 @@ Macierz Macierz::subtract(Macierz m2)
 
 Macierz Macierz::multiply(Macierz m2)
 {
-    //Podstawowa obsługa błędów
+    //Obsługa błędów
     if (this->kolumny != m2.wiersze)
     {
-        cout << "Liczba kolumn macierzy A musi byc rowna liczbie wierszy macierzy B!!!" << endl;
-        return 0;
+        stringstream errorMsg;
+        errorMsg << "Liczba kolumn macierzy A musi byc rowna liczbie wierszy macierzy B" << endl;
+        errorMsg << "A[" << this->wiersze << "," << this->kolumny << "] B[" << m2.wiersze << "," << m2.kolumny << "]" << endl;
+        throw invalid_argument(errorMsg.str());
     }
 
     Macierz m3(this->wiersze, m2.kolumny);
@@ -203,8 +226,10 @@ void Macierz::store(string filename, string path)
     }
     else
     {
-        cout << "Blad otwarcia pliku!" << endl;
-        cout << "Sprawdz czy podana sciezka: " << full_path << " jest poprawna" << endl;
+        stringstream errorMsg;
+        errorMsg << "Blad otwarcia pliku!" << endl;
+        errorMsg << "Sprawdz czy podana sciezka: " << full_path << " jest poprawna" << endl;
+        throw invalid_argument(errorMsg.str());
     }
 }
 
@@ -235,8 +260,9 @@ Macierz::Macierz(string path)
     }
     else
     {
-        cout << "Blad otwarcia pliku!" << endl;
-        cout << "Sprawdz czy podana sciezka: " << path << " jest poprawna" << endl;
-        exit(3);
+        stringstream errorMsg;
+        errorMsg << "Blad otwarcia pliku!" << endl;
+        errorMsg << "Sprawdz czy podana sciezka: " << path << " jest poprawna" << endl;
+        throw invalid_argument(errorMsg.str());
     }
-}  
+}
