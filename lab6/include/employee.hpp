@@ -1,9 +1,11 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 class Employee
 {
+public:
     //Identyfikator pracownika
     string id;
     //Imię
@@ -16,5 +18,8 @@ class Employee
     string position;
 
 public:
-    Employee(string id, string name, string surname, string departmentId, string position);
+    Employee(string name, string surname, string departmentId, string position);
+    Employee();
+
+    friend class HRMS;
 };
