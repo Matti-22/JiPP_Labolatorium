@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lab6.dir/src/HRMS.cpp.obj"
   "CMakeFiles/lab6.dir/src/employee.cpp.obj"
   "CMakeFiles/lab6.dir/src/main.cpp.obj"
   "lab6.exe"

@@ -6,17 +6,27 @@
 
 #IncludeRegexTransform: 
 
-../include/employee.hpp
+../include/HRMS.hpp
 iostream
 -
-
-D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/employee.cpp
-iostream
+map
+-
+string
+-
+sstream
 -
 employee.hpp
 -
 
+../include/employee.hpp
+iostream
+-
+string
+-
+
 D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/main.cpp
 iostream
+-
+HRMS.hpp
 -
 

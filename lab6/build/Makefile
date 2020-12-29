@@ -142,6 +142,33 @@ lab6/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab6.dir/build.make CMakeFiles/lab6.dir/build
 .PHONY : lab6/fast
 
+src/HRMS.obj: src/HRMS.cpp.obj
+
+.PHONY : src/HRMS.obj
+
+# target to build an object file
+src/HRMS.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab6.dir/build.make CMakeFiles/lab6.dir/src/HRMS.cpp.obj
+.PHONY : src/HRMS.cpp.obj
+
+src/HRMS.i: src/HRMS.cpp.i
+
+.PHONY : src/HRMS.i
+
+# target to preprocess a source file
+src/HRMS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab6.dir/build.make CMakeFiles/lab6.dir/src/HRMS.cpp.i
+.PHONY : src/HRMS.cpp.i
+
+src/HRMS.s: src/HRMS.cpp.s
+
+.PHONY : src/HRMS.s
+
+# target to generate assembly for a file
+src/HRMS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab6.dir/build.make CMakeFiles/lab6.dir/src/HRMS.cpp.s
+.PHONY : src/HRMS.cpp.s
+
 src/employee.obj: src/employee.cpp.obj
 
 .PHONY : src/employee.obj
@@ -205,6 +232,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab6"
+	@echo "... src/HRMS.obj"
+	@echo "... src/HRMS.i"
+	@echo "... src/HRMS.s"
 	@echo "... src/employee.obj"
 	@echo "... src/employee.i"
 	@echo "... src/employee.s"

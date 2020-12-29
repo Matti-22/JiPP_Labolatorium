@@ -104,20 +104,36 @@ CMakeFiles/lab6.dir/src/employee.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab6.dir/src/employee.cpp.s"
 	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/employee.cpp -o CMakeFiles/lab6.dir/src/employee.cpp.s
 
+CMakeFiles/lab6.dir/src/HRMS.cpp.obj: CMakeFiles/lab6.dir/flags.make
+CMakeFiles/lab6.dir/src/HRMS.cpp.obj: CMakeFiles/lab6.dir/includes_CXX.rsp
+CMakeFiles/lab6.dir/src/HRMS.cpp.obj: ../src/HRMS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab6.dir/src/HRMS.cpp.obj"
+	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab6.dir/src/HRMS.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/HRMS.cpp
+
+CMakeFiles/lab6.dir/src/HRMS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab6.dir/src/HRMS.cpp.i"
+	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/HRMS.cpp > CMakeFiles/lab6.dir/src/HRMS.cpp.i
+
+CMakeFiles/lab6.dir/src/HRMS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab6.dir/src/HRMS.cpp.s"
+	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/HRMS.cpp -o CMakeFiles/lab6.dir/src/HRMS.cpp.s
+
 # Object files for target lab6
 lab6_OBJECTS = \
 "CMakeFiles/lab6.dir/src/main.cpp.obj" \
-"CMakeFiles/lab6.dir/src/employee.cpp.obj"
+"CMakeFiles/lab6.dir/src/employee.cpp.obj" \
+"CMakeFiles/lab6.dir/src/HRMS.cpp.obj"
 
 # External object files for target lab6
 lab6_EXTERNAL_OBJECTS =
 
 lab6.exe: CMakeFiles/lab6.dir/src/main.cpp.obj
 lab6.exe: CMakeFiles/lab6.dir/src/employee.cpp.obj
+lab6.exe: CMakeFiles/lab6.dir/src/HRMS.cpp.obj
 lab6.exe: CMakeFiles/lab6.dir/build.make
 lab6.exe: CMakeFiles/lab6.dir/linklibs.rsp
 lab6.exe: CMakeFiles/lab6.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab6.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lab6.exe"
 	"C:/Program Files/CMake/bin/cmake.exe" -E rm -f CMakeFiles/lab6.dir/objects.a
 	D:/Mateusz/Programy/mimgw/MinGW/bin/ar.exe cr CMakeFiles/lab6.dir/objects.a @CMakeFiles/lab6.dir/objects1.rsp
 	D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe -g -Wl,--whole-archive CMakeFiles/lab6.dir/objects.a -Wl,--no-whole-archive -o lab6.exe -Wl,--out-implib,liblab6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/lab6.dir/linklibs.rsp
