@@ -51,8 +51,8 @@ void HRMS::changeSalary(string employeeId, double salary)
 
     map<string, string>::iterator it;
     int i = employee_DEPID_ID.size();
-    int pom = 0;
-    for (it = employee_DEPID_ID.begin(); it != employee_DEPID_ID.end(); ++it)
+    int pom = 1;
+    for (it = employee_DEPID_ID.begin(); it != employee_DEPID_ID.end(); it++)
     {
         if (it->first == employeeId)
         {
@@ -65,10 +65,8 @@ void HRMS::changeSalary(string employeeId, double salary)
             errorMsg << "This ID does not exist in the company" << endl;
             throw invalid_argument(errorMsg.str());
         }
-
         pom++;
     }
-    
 }
 
 void HRMS::printSalaries()
@@ -76,6 +74,30 @@ void HRMS::printSalaries()
     map<string, double>::iterator it;
     for (it = employee_salary.begin(); it != employee_salary.end(); ++it)
     {
-        cout << this->all_employees[it->first].name << " " << this->all_employees[it->first].surname << " ID: " << this->all_employees[it->first].id << " DepartmentID: " << this->all_employees[it->first].departmentId << " Position: "<< this->all_employees[it->first].position << " Salary: " << it->second << endl;
+        cout << this->all_employees[it->first].name << " " << this->all_employees[it->first].surname << " ID: " << this->all_employees[it->first].id << " DepartmentID: " << this->all_employees[it->first].departmentId << " Position: " << this->all_employees[it->first].position << " Salary: " << it->second << endl;
     }
+}
+
+void HRMS::printSalariesSorted()
+{
+    vector<pair<string, double>> v;
+    map<string, double>::iterator it;
+
+    for (it = employee_salary.begin(); it != employee_salary.end(); ++it)
+    {
+        v.push_back(make_pair(it->first, it->second));
+    }
+
+    sort(v.begin(), v.end(), sortByVal);
+
+    vector<pair<string, double>>::iterator it2;
+    for (it2 = v.begin(); it2 != v.end(); ++it2)
+    {
+        cout << this->all_employees[it2->first].name << " " << this->all_employees[it2->first].surname << " ID: " << this->all_employees[it2->first].id << " DepartmentID: " << this->all_employees[it2->first].departmentId << " Position: " << this->all_employees[it2->first].position << " Salary: " << it2->second << endl;
+    }
+}
+
+bool HRMS::sortByVal(const pair<string, double> &a, const pair<string, double> &b)
+{
+    return (a.second > b.second);
 }

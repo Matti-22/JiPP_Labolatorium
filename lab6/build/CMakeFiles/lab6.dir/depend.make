@@ -12,3 +12,7 @@ CMakeFiles/lab6.dir/src/main.cpp.obj: ../include/HRMS.hpp
 CMakeFiles/lab6.dir/src/main.cpp.obj: ../include/employee.hpp
 CMakeFiles/lab6.dir/src/main.cpp.obj: ../src/main.cpp
 
+CMakeFiles/lab6.dir/test/test.cpp.obj: ../include/HRMS.hpp
+CMakeFiles/lab6.dir/test/test.cpp.obj: ../include/employee.hpp
+CMakeFiles/lab6.dir/test/test.cpp.obj: ../test/test.cpp
+

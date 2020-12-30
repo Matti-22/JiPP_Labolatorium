@@ -3,6 +3,8 @@
 #include <string>
 #include <sstream>
 #include <employee.hpp>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -15,6 +17,8 @@ class HRMS
     //kontener przechowywujący informacje o zarobkach pracowników
     map<string, double> employee_salary;
 
+    static bool sortByVal(const pair<string, double> &a, const pair<string, double> &b);
+
 public:
     //Metoda dodaje użytkownika do systemu, do danego departamentu, mającego dane wynagrodzenie
     void add(Employee employee, string departmentId, double salary);
@@ -24,4 +28,6 @@ public:
     void changeSalary(string employeeId, double salary);
     //Metoda wypisująca wynagrodzenia pracowników, wraz z informacjami o tych pracownikach
     void printSalaries();
+    //Metoda wypisująca wynagrodzenia wszystkich pracowników, wraz z informacjami o tych pracownikach, w kolejności malejącego wynagrodzenia
+    void printSalariesSorted();
 };

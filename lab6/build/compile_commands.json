@@ -13,5 +13,10 @@
   "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/build",
   "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab6.dir/includes_CXX.rsp -g -o CMakeFiles/lab6.dir/src/HRMS.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/HRMS.cpp",
   "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/HRMS.cpp"
+},
+{
+  "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/build",
+  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab6.dir/includes_CXX.rsp -g -o CMakeFiles/lab6.dir/test/test.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/test/test.cpp",
+  "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/test/test.cpp"
 }
 ]

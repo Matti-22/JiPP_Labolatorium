@@ -17,6 +17,10 @@ sstream
 -
 employee.hpp
 -
+vector
+-
+algorithm
+-
 
 ../include/employee.hpp
 iostream
@@ -24,9 +28,7 @@ iostream
 string
 -
 
-D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/main.cpp
-iostream
--
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab6/src/HRMS.cpp
 HRMS.hpp
 -
 
