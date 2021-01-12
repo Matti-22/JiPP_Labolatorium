@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/build",
+  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab7.dir/includes_CXX.rsp -g -o CMakeFiles/lab7.dir/src/main.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/main.cpp",
+  "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/main.cpp"
+},
+{
+  "directory": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/build",
+  "command": "D:/Mateusz/Programy/mimgw/MinGW/bin/g++.exe  @CMakeFiles/lab7.dir/includes_CXX.rsp -g -o CMakeFiles/lab7.dir/src/macierz.cpp.obj -c D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/macierz.cpp",
+  "file": "D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/macierz.cpp"
+}
+]
