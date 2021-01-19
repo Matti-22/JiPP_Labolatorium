@@ -48,7 +48,7 @@ void fun()
 
     int main()
     {
-        fun_test();
-        //fun();
+        //fun_test();
+        fun();
         return 0;
     }

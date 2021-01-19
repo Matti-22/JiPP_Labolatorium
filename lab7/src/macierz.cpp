@@ -1,5 +1,4 @@
-#include <iostream>
-#include <fstream>
+
 #include "macierz.h"
 using namespace std;
 
@@ -57,7 +56,6 @@ Macierz::Macierz(int r)
 
 Macierz::~Macierz()
 {
-    
 }
 
 void Macierz::set(int n, int m, double val)
@@ -87,7 +85,7 @@ double Macierz::get(int n, int m)
     }
 }
 
-Macierz Macierz::add(Macierz& m2)
+Macierz Macierz::add(Macierz m2)
 {
     //Podstawowa obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
@@ -109,7 +107,7 @@ Macierz Macierz::add(Macierz& m2)
     return m3;
 }
 
-Macierz Macierz::subtract(Macierz& m2)
+Macierz Macierz::subtract(Macierz m2)
 {
     //Podstawowa obsługa błędów
     if (m2.kolumny != this->kolumny || m2.wiersze != this->wiersze)
@@ -131,7 +129,7 @@ Macierz Macierz::subtract(Macierz& m2)
     return m3;
 }
 
-Macierz Macierz::multiply(Macierz& m2)
+Macierz Macierz::multiply(Macierz m2)
 {
     //Podstawowa obsługa błędów
     if (this->kolumny != m2.wiersze)
@@ -239,4 +237,55 @@ Macierz::Macierz(string path)
         cout << "Sprawdz czy podana sciezka: " << path << " jest poprawna" << endl;
         exit(3);
     }
-}  
+}
+
+Macierz Macierz::operator+(const Macierz &m2)
+{
+    return add(m2);
+}
+
+Macierz Macierz::operator-(Macierz m2)
+{
+    return subtract(m2);
+}
+
+Macierz Macierz::operator*(Macierz m2)
+{
+    return multiply(m2);
+}
+
+/*
+ostream &operator<<(ostream &plik, Macierz m1)
+{
+    plik << m1.cols() << m1.rows() << endl;
+    for (int i = 0; i < m1.cols(); i++)
+    {
+        for (int j = 0; j < m1.rows(); j++)
+        {
+            plik << m1.get(i,j) << "  ";
+        }
+        plik << endl;
+    }
+    return plik;
+}
+*/
+
+bool Macierz::operator==(Macierz m2)
+{
+    for(int i=0;i<this->wiersze;i++)
+    {
+        for(int j=0;j<this->kolumny;j++)
+        {
+            if(this->tablica[i][j] != m2[i][j])
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+double *Macierz::operator[](int i)
+{
+    return tablica[i];
+}

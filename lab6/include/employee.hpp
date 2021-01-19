@@ -5,7 +5,6 @@ using namespace std;
 
 class Employee
 {
-public:
     //Identyfikator pracownika
     string id;
     //Imię

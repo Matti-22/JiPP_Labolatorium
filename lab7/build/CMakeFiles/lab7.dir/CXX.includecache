@@ -9,12 +9,14 @@
 ../include/macierz.h
 iostream
 -
-
-D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/macierz.cpp
-iostream
--
 fstream
 -
+sstream
+-
+string
+-
+
+D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/macierz.cpp
 macierz.h
 D:/Mateusz/Programowanie/C++/JiPP_lab/lab7/src/macierz.h
 
