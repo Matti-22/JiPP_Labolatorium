@@ -1,5 +1,5 @@
 #include <iostream>
-#include "macierz.h"
+#include "../include/lab5/macierz.h"
 
 using namespace std;
 
@@ -119,7 +119,7 @@ void testErrors()
          << endl;
 }
 
-void test()
+void test(sqlite3 *db)
 {
     Macierz m1(4, 5);
     int kol = m1.cols();
@@ -166,9 +166,38 @@ void test()
     cout << "Macierz m3 - m1 = m5:" << endl;
     m5.print();
 
-    m5.store("m5.txt", "../src/pliki");
+    m5.stored(db, "m5");
 
-    Macierz m6("../src/pliki/m5.txt");
-    cout << "Macierz m6 wczytana z pliku m5.txt:" << endl;
+    Macierz m6(db, "m5");
+    cout << "m6:" << endl;
     m6.print();
+}
+
+sqlite3* connect() {
+    sqlite3 *db;
+
+    int rc = sqlite3_open("database.sqlite", &db);
+    if(rc) {
+        cerr << "Can't open database: " << endl << sqlite3_errmsg(db) << endl;
+        exit(1);
+    } else {
+        cout << "Opened database successfully" << endl;
+    }
+
+    return db;
+}
+
+void clearTable(sqlite3 *db)
+{
+    const char *sql;
+    char **errMsg = nullptr;
+    int rc;
+
+    sql = "DELETE FROM tabela";
+    rc = sqlite3_exec(db, sql, nullptr, nullptr, errMsg);
+
+    if (rc != SQLITE_OK) {
+        cerr << "Error clearing table \"tabela\":" << endl << errMsg << endl;
+        exit(1);
+    }
 }

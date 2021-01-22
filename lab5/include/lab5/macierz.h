@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include "../libs/sqlite3/sqlite3.h"
+#include <string.h>
 using namespace std;
 
 class Macierz
@@ -13,6 +16,8 @@ public:
     Macierz(int r);
     //Konstruktor czytający dane na temat macierzy z pliku, przyjmujący jako argument ścieżkę do tego pliku
     Macierz(string path);
+    //Konstruktor tworzący macierz z bazy danych
+    Macierz(sqlite3 *db, const string& name);
     //Destruktor
     ~Macierz();
 
@@ -42,5 +47,8 @@ public:
 
     //Metoda zapisująca macierz w pliku, w pierwszym wierszu pliku jej wymiary (liczbę kolumn i wierszy) oraz jej zawartość (każdy wiersz macierzy w osobnym wierszu pliku)
     void store(string filename, string path);
+
+    //Metoda zapisuje macierz do bazy danych
+    void stored(sqlite3 *db, const string& name);
     
 };
