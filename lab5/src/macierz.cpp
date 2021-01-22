@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "macierz.h"
+#include "../include/lab5/macierz.h"
 using namespace std;
 
 Macierz::Macierz(int w, int k)
@@ -202,6 +202,90 @@ void Macierz::print()
         cout << endl;
     }
     cout << endl;
+}
+void Macierz::stored(sqlite3 *db, const string& name)
+{
+    char *zErrMsg = nullptr;
+    int rc;
+
+    stringstream ss;
+    ss << "INSERT INTO tabela ('matrix_name', 'n', 'm', 'data') ";
+    ss << "VALUES ('" << name  << "', '" << this->wiersze << "', '" << this->kolumny << "', '";
+    for (int i = 0; i < wiersze; i++)
+        for (int j = 0; j < kolumny; j++)
+            ss << tablica[i][j] << ' ';
+    ss << "')";
+    const string & sql_str = ss.str();
+    const char* sql = sql_str.c_str();
+
+    rc = sqlite3_exec(db, sql, nullptr, nullptr, &zErrMsg);
+
+    if (rc != SQLITE_OK) {
+        string errorMsg;
+        if (!strcmp(zErrMsg, "UNIQUE constraint failed: tabela.matrix_name"))
+            errorMsg = "Matrix with name \"" + name + "\" already exists in database";
+        else {
+            errorMsg = "Could not store matrix \"" + name + "\"";
+        }
+        throw(runtime_error(errorMsg));
+
+    } else {
+        cout << "Successfully stored matrix \"" << name << '"' << endl << endl;
+    }
+}
+
+int loadMatrixData(void *data, int argc, char **argv, char **azColName) {
+    vector<string> *v = (vector<string> *)(data);
+
+    v->push_back(argv[1]);
+    v->push_back(argv[2]);
+    v->push_back(argv[3]);
+
+    return 0;
+}
+
+Macierz::Macierz(sqlite3 *db, const string& name) {
+    char *zErrMsg = nullptr;
+    int rc;
+    const char *sql;
+    string sql_str;
+    vector<string> matrixData;
+
+    sql_str = "SELECT * FROM tabela WHERE matrix_name == '" + name + "'";
+    sql = sql_str.c_str();
+
+    rc = sqlite3_exec(db, sql, loadMatrixData, &matrixData, &zErrMsg);
+    if (rc != SQLITE_OK) {
+        string errorMsg = "Error loading matrix \"" + name + "\": " + zErrMsg;
+        throw(runtime_error(errorMsg));
+    } else {
+        if (!matrixData.empty()) {
+            cout << "Successfully loaded matrix \"" << name << '"' << endl << endl;
+        } else {
+            string errorMsg = "No such matrix \"" + name + "\"\n";
+            throw(runtime_error(errorMsg));
+        }
+    }
+
+    string nStr = matrixData[0];
+    string mStr = matrixData[1];
+    stringstream dataSS(matrixData[2]);
+
+    this->wiersze = atoi(nStr.c_str());
+    this->kolumny = atoi(mStr.c_str());
+
+    tablica = new double*[wiersze];
+
+    for (int i = 0; i < wiersze; i++) {
+        tablica[i] = new double[kolumny];
+
+        for (int j = 0; j < kolumny; j++) {
+            string buf;
+            dataSS >> buf;
+
+            tablica[i][j] = atof(buf.c_str());
+        }
+    }
 }
 
 void Macierz::store(string filename, string path)
